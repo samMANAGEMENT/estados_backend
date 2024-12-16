@@ -22,8 +22,8 @@ class AdminGuestController extends Controller
 
             return response()->json(
                 [
-                    $statuses,
-                    $guests
+                    "statuses"=>$statuses,
+                    "guests"=>$guests
                 ],
                 200
             );

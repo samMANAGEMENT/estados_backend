@@ -18,3 +18,4 @@ api/v1/admin/statuses/{status}          PATCH
 api/v1/admin/statuses/{status}          DELETE
   
 
+php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan optimize:clear && composer dump-autoload && npm cache clean --force && npm install && composer install && npm run build
