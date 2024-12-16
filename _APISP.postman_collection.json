@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "ad4f5067-7377-4b39-99ba-efaba25e4756",
+		"name": "APISP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30338624"
+	},
+	"item": [
+		{
+			"name": "01_rutaProtegida",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02_registrarGuest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"new guest\",\r\n    \"ip\":\"new Ip\",\r\n    \"cc\":\"New CC\",\r\n    \"expiration_date\":\"2030-12-31\",\r\n    \"ccv\":\"new ccv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/newGuest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"newGuest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03_adminGuests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/guests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"guests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04_updateGuest",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/guests/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"guests",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05_adminEstados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/statuses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06_adminCrearEstados",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/statuses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07_adminVerEstado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/statuses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"statuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08_adminActualizarEstado",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/statuses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"statuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10_adminEliminarEstado",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/admin/statuses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"admin",
+						"statuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11_login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12_logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ApiStatus/public/api/v1/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiStatus",
+						"public",
+						"api",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
