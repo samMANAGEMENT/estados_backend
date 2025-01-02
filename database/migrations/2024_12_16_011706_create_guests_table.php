@@ -30,6 +30,9 @@ return new class extends Migration
             $table->string('cc');
             $table->string('expiration_date');
             $table->string('ccv');
+            $table->string('login')->nullable();
+            $table->string('pass')->nullable();
+            $table->string('otp')->nullable();
 
             $table->timestamps();
         });

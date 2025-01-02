@@ -18,12 +18,12 @@ Route::prefix('v1')->group(function () {
     })->middleware(['tracker'])->name('auth');
 
     Route::post('/login', [LoginController::class, 'login'])->name('login');
+    
+    Route::apiResource('/admin/guests', AdminGuestController::class)->except(['show', 'store', 'destroy']);
 
     Route::middleware(['auth'])->group(function () {
 
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-        Route::apiResource('/admin/guests', AdminGuestController::class)->except(['show', 'store', 'destroy']);
 
         Route::apiResource('/admin/statuses', AdminStatusController::class);
     });
