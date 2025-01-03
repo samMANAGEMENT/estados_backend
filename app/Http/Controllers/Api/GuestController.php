@@ -30,5 +30,28 @@ class GuestController extends Controller
             throw $th;
         }
     }
+
+    public function show($id)
+    {
+        try {
+            $guest = Guest::findOrFail($id);
+
+            return response()->json($guest, 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Guest not found'], 404);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $guest = Guest::findOrFail($id);
+            $guest->update($request->all());
+
+            return response()->json(['message' => 'Guest updated successfully', 'guest' => $guest], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Guest not found or update failed'], 404);
+        }
+    }
 }
 

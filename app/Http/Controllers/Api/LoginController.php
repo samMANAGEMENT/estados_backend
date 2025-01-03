@@ -9,21 +9,29 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
+
     public function login(Request $request)
-    {
-        try {
-            $credentials = $request->only('email', 'password');
+{
+    try {
+        $credentials = $request->only('email', 'password');
 
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-                return response()->json(['message' => 'usuario en sistema']);
-            }
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            $user = Auth::user();
+            $token = $user->createToken('auth_token')->plainTextToken;
 
-            return response()->json(['message' => 'usuario no encontrado'], 401);
-        } catch (\Throwable $th) {
-            throw $th;
+            return response()->json([
+                'message' => 'usuario en sistemaa',
+                'access_token' => $token,
+                'token_type' => 'Bearer',
+            ]);
         }
+
+        return response()->json(['message' => 'usuario no encontrado'], 401);
+    } catch (\Throwable $th) {
+        throw $th;
     }
+}
 
     public function logout(Request $request)
     {
