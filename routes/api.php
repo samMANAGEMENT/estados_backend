@@ -9,6 +9,11 @@ use App\Models\Guest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/v1/test', function () {
+    return response()->json(['message' => 'La ruta de prueba está funcionando']);
+});
+
+
 Route::prefix('v1')->group(function () {
 
     Route::post('/newGuest', [GuestController::class, 'newGuest'])->name('newGuest');
