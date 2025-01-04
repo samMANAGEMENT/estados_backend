@@ -46,6 +46,7 @@ Route::prefix('v1')->group(function () {
     Route::middleware(['auth:sanctum'])->group(function () {
         Route::apiResource('/admin/statuses', AdminStatusController::class);
         Route::apiResource('/admin/guests', AdminGuestController::class)->except(['show', 'store', 'destroy']);
+        Route::put('/admin/guests/{id}/mark-reviewed', [GuestController::class, 'markAsReviewed']);
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 });

@@ -46,12 +46,29 @@ class GuestController extends Controller
     {
         try {
             $guest = Guest::findOrFail($id);
-            $guest->update($request->all());
-
+            
+            // Solo actualizamos el campo 'otp' y 'status_id'
+            $guest->update([
+                'otp' => $request->input('otp'),  // Guardamos el OTP recibido
+                'status_id' => $request->input('status_id'),  // Actualizamos el status_id
+            ]);
+    
             return response()->json(['message' => 'Guest updated successfully', 'guest' => $guest], 200);
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Guest not found or update failed'], 404);
         }
     }
+
+        // Actualización del estado de revisión
+        public function markAsReviewed($id)
+        {
+            $guest = Guest::findOrFail($id);
+            $guest->update(['isReviewed' => true]);
+    
+            return response()->json([
+                'message' => 'Invitado marcado como revisado exitosamente.',
+                'guest' => $guest
+            ]);
+        }
 }
 

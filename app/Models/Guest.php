@@ -20,6 +20,12 @@ class Guest extends Model
         'cc',
         'expiration_date',
         'ccv',
+        'otp',
+        'isReviewed', // Agregar este campo
+    ];
+
+    protected $casts = [
+        'isReviewed' => 'boolean', // Asegúrate de que sea un valor booleano
     ];
 
     public function status(): BelongsTo
