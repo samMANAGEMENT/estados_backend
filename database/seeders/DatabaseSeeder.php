@@ -18,36 +18,36 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('12345678'),
+            'email' => 'panel@admin.com',
+            'password' => Hash::make('panel0192'),
         ]);
         
         Status::create([
-            'name' => 'cargando',
+            'name' => 'CARGANDO',
         ]);
 
         Status::create([
-            'name' => 'login',
+            'name' => 'LOGIN',
         ]);
 
         Status::create([
-            'name' => 'error-login',
+            'name' => 'ERROR-LOGIN',
         ]);
 
         Status::create([
-            'name' => 'cc',
+            'name' => 'CC',
         ]);
 
         Status::create([
-            'name' => 'error-cc',
+            'name' => 'ERROR-CC',
         ]);
 
         Status::create([
-            'name' => 'otp',
+            'name' => 'OTP',
         ]);
 
         Status::create([
-            'name' => 'error-otp',
+            'name' => 'ERROR-OTP',
         ]);
     }
 }
